@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>net.judahzone</groupId>
+    <artifactId>meta-zone</artifactId>
+    <version>0.2-SNAPSHOT</version>
+    <relativePath>../meta-zone/pom.xml</relativePath>
+  </parent>
+
+  <artifactId>zone-test</artifactId>
+  <name>zone-test</name>
+  <packaging>jar</packaging>
+
+  <dependencies>
+    <dependency>
+      <groupId>net.judahzone</groupId>
+      <artifactId>zone-core</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>net.judahzone</groupId>
+      <artifactId>zone-fx</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>net.judahzone</groupId>
+      <artifactId>zone-gui</artifactId>
+    </dependency>
+    <dependency>
+   	  <groupId>net.judahzone</groupId>
+      <artifactId>zone-jnajack</artifactId>
+    </dependency>
+  </dependencies>
+</project>
