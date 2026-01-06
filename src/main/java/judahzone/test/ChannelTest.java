@@ -1,4 +1,3 @@
-// java
 package judahzone.test;
 
 import static judahzone.util.Constants.LEFT_OUT;
@@ -29,6 +28,7 @@ import org.jaudiolibs.jnajack.JackClient;
 import org.jaudiolibs.jnajack.JackException;
 import org.jaudiolibs.jnajack.JackPort;
 
+import judahzone.api.Asset;
 import judahzone.api.FX;
 import judahzone.api.PlayAudio;
 import judahzone.fx.Chorus;
@@ -46,7 +46,8 @@ import judahzone.util.AudioTools;
 import judahzone.util.MP3;
 import judahzone.util.Recording;
 
-public class FloatsTest extends ZoneJackClient {
+/** Test out Effects and the ChannelStrip */
+public class ChannelTest extends ZoneJackClient {
 
 	private JackPort outL, outR;
 
@@ -64,12 +65,16 @@ public class FloatsTest extends ZoneJackClient {
 	float[] workL = new float[bufSize()];
 	float[] workR = new float[bufSize()];
 
-	public FloatsTest(String file) throws JackException, Exception {
+	public ChannelTest(String file) throws JackException, Exception {
 	    super("zone-test");
-	    tape = MP3.load(new File(file));
+	    File absolute = new File(file);
+	    tape = MP3.load(absolute);
+
+	    Asset a = new Asset(absolute.getName(),  absolute, tape, tape.size() * judahzone.util.Constants.bufSize(), Asset.Category.USER);
+
 	    // Prepare player but do not start; we'll start on first process() call
 	    player = new BasicPlayer();
-	    player.setRecording(tape);
+	    player.setRecording(a);
 	    player.setType(PlayAudio.Type.LOOP);
 
 	     // prepare bus as anonymous instances of the effects so FloatsBus owns them
@@ -267,7 +272,7 @@ public class FloatsTest extends ZoneJackClient {
 	            if (args != null && args.length > 0) {
 	                file = args[0];
 	            }
-	            new FloatsTest(file);
+	            new ChannelTest(file);
 	        } catch (Exception e) {
 	            e.printStackTrace();
 	        }
