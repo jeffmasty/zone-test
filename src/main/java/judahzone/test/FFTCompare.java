@@ -288,3 +288,38 @@ class TarsosWrapper implements FFTLibraryWrapper {
 //	    }
 //	}
 //}
+
+
+
+//<repository>
+//<id>ossrh</id>
+//<url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+//</repository>
+//
+//FFTW
+//* https://github.com/fudcom/kjdss/tree/master
+//<dependency>
+//	<groupId>com.fudcom.kjdss</groupId>
+//	<artifactId>kjdss-root</artifactId>
+//	<version>1.3.2-SNAPSHOT</version>
+//</dependency>
+//<dependency>
+//  <groupId>org.bytedeco</groupId>
+//  <artifactId>fftw</artifactId>
+//  <version>3.3.9-1.5.6</version>
+//</dependency>
+//<dependency>
+//  <groupId>org.bytedeco</groupId>
+//  <artifactId>fftw-platform</artifactId>
+//  <version>3.3.9-1.5.6</version>
+//</dependency>
+//<dependency>
+//  <groupId>org.bytedeco</groupId>
+//  <artifactId>javacpp</artifactId>
+//  <version>1.5.6</version>
+//</dependency>
+//<dependency>
+//  <groupId>org.apache.commons</groupId>
+//  <artifactId>commons-math3</artifactId>
+//  <version>3.6.1</version>
+//</dependency>
