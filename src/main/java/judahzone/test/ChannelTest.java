@@ -28,23 +28,23 @@ import org.jaudiolibs.jnajack.JackClient;
 import org.jaudiolibs.jnajack.JackException;
 import org.jaudiolibs.jnajack.JackPort;
 
-import judahzone.api.Asset;
 import judahzone.api.FX;
 import judahzone.api.PlayAudio;
+import judahzone.data.Asset;
+import judahzone.data.Recording;
 import judahzone.fx.Chorus;
 import judahzone.fx.Compressor;
 import judahzone.fx.Delay;
 import judahzone.fx.EQ;
-import judahzone.fx.Filter;
+import judahzone.fx.CutFilter;
 import judahzone.fx.Freeverb;
 import judahzone.fx.Gain;
 import judahzone.fx.Overdrive;
-import judahzone.fx.StereoBus;
+import judahzone.fx.op.FXBus;
 import judahzone.jnajack.BasicPlayer;
 import judahzone.jnajack.ZoneJackClient;
 import judahzone.util.AudioTools;
 import judahzone.util.MP3;
-import judahzone.util.Recording;
 
 /** Test out Effects and the ChannelStrip */
 public class ChannelTest extends ZoneJackClient {
@@ -54,7 +54,7 @@ public class ChannelTest extends ZoneJackClient {
 	static final String DEFAULT_FILE = "/home/judah/Music/Stubborn All-Stars - Open Season/Stubborn All-Stars - 09 - Catch that Train.mp3";
 	private final Recording tape;
 
-	private final StereoBus channel;
+	private final FXBus channel;
 	private final JTable table;
 	private final JPanel bottom = new JPanel();
 
@@ -78,11 +78,11 @@ public class ChannelTest extends ZoneJackClient {
 	    player.setType(PlayAudio.Type.LOOP);
 
 	     // prepare bus as anonymous instances of the effects so FloatsBus owns them
-	    channel = new StereoBus(
+	    channel = new FXBus(
 	        new Gain(),
 	        new EQ(),
-	        new Filter(true),    // hiCut
-	        new Filter(false),   // loCut
+	        new CutFilter(true),    // hiCut
+	        new CutFilter(false),   // loCut
 	        new Compressor(),
 	        new Delay(),
 	        new Overdrive(),
@@ -316,7 +316,9 @@ public class ChannelTest extends ZoneJackClient {
 	    player.process(workL, workR);
 
 	    // Let our channel process the mixed output buffers in-place
-	    channel.process(workL, workR);
+	    // TODO channel.process(workL, workR);
+
+
 
 	    // send back to jack
 	    AudioTools.copy(workL, outL.getFloatBuffer().rewind());
