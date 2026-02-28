@@ -1,7 +1,5 @@
 package judahzone.dev;
 
-// https://github.com/anthonyassi/Drum-Synthesizer/blob/master/Final%20Deliverables/FINAL%20SOURCE/DrumSynthPanel.java
-
 import java.awt.Color;
 import java.awt.Dimension;
 

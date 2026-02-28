@@ -1,4 +1,4 @@
-package judahzone.test;
+package judahzone.dev;
 
 import static judahzone.util.Constants.LEFT_OUT;
 import static judahzone.util.Constants.RIGHT_OUT;

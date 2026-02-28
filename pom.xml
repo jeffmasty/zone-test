@@ -33,6 +33,11 @@
    	  <groupId>net.judahzone</groupId>
       <artifactId>zone-jnajack</artifactId>
     </dependency>
+    <dependency>
+		<groupId>net.judahzone</groupId>
+        <artifactId>judah-zone</artifactId>
+        <version>0.3-SNAPSHOT</version>
+    </dependency>
 
 	
 	<dependency>

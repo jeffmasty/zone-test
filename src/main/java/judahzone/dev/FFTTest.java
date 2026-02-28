@@ -1,4 +1,4 @@
-package judahzone.test;
+package judahzone.dev;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -19,6 +19,7 @@ import be.tarsos.dsp.pitch.PitchDetectionResult;
 import be.tarsos.dsp.pitch.Yin;
 import be.tarsos.dsp.util.fft.FFT;
 import be.tarsos.dsp.util.fft.HammingWindow;
+import judahzone.test.TestUtilities;
 
 public class FFTTest {
 
